@@ -4,9 +4,23 @@ check_login();
 
 require_once 'data/questions.php';
 
-// initialize used questions
+ini_set('display_errors', 0);
+
+// reset game
+if (isset($_POST['reset'])) {
+    $_SESSION['score'] = 0;
+    $_SESSION['used_questions'] = [];
+}
+
+// init used questions
 if (!isset($_SESSION['used_questions'])) {
     $_SESSION['used_questions'] = [];
+}
+
+// count total questions
+$totalQuestions = 0;
+foreach ($questions as $qs) {
+    $totalQuestions += count($qs);
 }
 ?>
 
@@ -20,6 +34,15 @@ if (!isset($_SESSION['used_questions'])) {
 <h1>Jeopardy Game</h1>
 
 <h3>Score: <?php echo $_SESSION['score'] ?? 0; ?></h3>
+
+<form method="POST">
+    <button type="submit" name="reset">Reset Game</button>
+</form>
+
+<?php if (count($_SESSION['used_questions']) === $totalQuestions): ?>
+    <h2>Game Over!</h2>
+    <p>Final Score: <?php echo $_SESSION['score'] ?? 0; ?></p>
+<?php endif; ?>
 
 <table border="1" cellpadding="20">
 
