@@ -56,3 +56,111 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy! — Create Account</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-bg">
+        <div class="bg-grid"></div>
+        <div class="bg-glow"></div>
+    </div>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-logo">
+            <div class="logo-mark">J!</div>
+            <p class="logo-sub">JEOPARDY</p>
+        </div>
+
+        <div class="auth-card">
+            <div class="auth-card-header">
+                <h1>New Contestant</h1>
+                <p>Create your account to start playing</p>
+            </div>
+
+            <?php if (!empty($error)): ?>
+                <div class="alert alert-error">
+                    <span class="alert-icon">!</span>
+                    <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($success)): ?>
+                <div class="alert alert-success">
+                    <span class="alert-icon">✓</span>
+                    <?php echo $success; ?>
+                    <a href="login.php" class="alert-link">Sign in now →</a>
+                </div>
+            <?php endif; ?>
+
+            <form method="POST" action="register.php" class="auth-form" novalidate>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="form-input"
+                        value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>"
+                        placeholder="Choose a username (3–20 chars)"
+                        autocomplete="username"
+                        required>
+                    <span class="form-hint">Letters, numbers, and underscores only</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-input"
+                        placeholder="At least 6 characters"
+                        autocomplete="new-password"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirm_password"
+                        name="confirm_password"
+                        class="form-input"
+                        placeholder="Repeat your password"
+                        autocomplete="new-password"
+                        required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    Create Account
+                    <span class="btn-arrow">→</span>
+                </button>
+
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.php" class="auth-link">Sign in</a></p>
+            </div>
+        </div>
+
+        <div class="dollar-strip">
+            <span>$200</span><span>$400</span><span>$600</span><span>$800</span><span>$1000</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
