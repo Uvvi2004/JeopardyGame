@@ -1,5 +1,12 @@
 <?php
 include 'includes/session.php';
+// Redirect if already logged in
+if (isset($_SESSION['user'])) {
+	header("Location: dashboard.php");
+	exit();
+}
+
+$error = "";
 ?>
 
 <!DOCTYPE html>
