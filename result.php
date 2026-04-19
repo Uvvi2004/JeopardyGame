@@ -16,11 +16,6 @@ if (!isset($_SESSION['used_questions'])) {
     $_SESSION['used_questions'] = [];
 }
 
-// init leaderboard
-if (!isset($_SESSION['scores'])) {
-    $_SESSION['scores'] = [];
-}
-
 // get data
 $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
 $userAnswer = isset($_POST['answer']) ? trim($_POST['answer']) : '';
@@ -56,11 +51,26 @@ if ($isCorrect) {
     $_SESSION['score'] -= $selectedQuestion['points'];
 }
 
-// save leaderboard
-$_SESSION['scores'][] = [
+//
+// 🔥 SAVE TO FILE (PERSISTENT LEADERBOARD)
+//
+$file = 'data/scores.txt';
+
+$scores = [];
+
+if (file_exists($file)) {
+    $json = file_get_contents($file);
+    $scores = json_decode($json, true) ?? [];
+}
+
+// add new score
+$scores[] = [
     "user" => $_SESSION['user'],
     "score" => $_SESSION['score']
 ];
+
+// save back
+file_put_contents($file, json_encode($scores));
 ?>
 
 <!DOCTYPE html>
