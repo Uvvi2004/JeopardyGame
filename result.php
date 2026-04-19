@@ -4,6 +4,8 @@ check_login();
 
 require_once 'data/questions.php';
 
+ini_set('display_errors', 0);
+
 // init score
 if (!isset($_SESSION['score'])) {
     $_SESSION['score'] = 0;
@@ -25,7 +27,6 @@ $userAnswer = isset($_POST['answer']) ? trim($_POST['answer']) : '';
 
 $selectedQuestion = null;
 
-// find question
 foreach ($questions as $category => $qs) {
     foreach ($qs as $q) {
         if ($q['id'] === $id) {
@@ -40,11 +41,13 @@ if (!$selectedQuestion) {
     exit();
 }
 
-// mark used
-$_SESSION['used_questions'][] = $id;
+// mark used safely
+if (!in_array($id, $_SESSION['used_questions'])) {
+    $_SESSION['used_questions'][] = $id;
+}
 
 // check answer
-$isCorrect = strtolower($userAnswer) === strtolower($selectedQuestion['a']);
+$isCorrect = strtolower(trim($userAnswer)) === strtolower(trim($selectedQuestion['a']));
 
 // update score
 if ($isCorrect) {
@@ -53,7 +56,7 @@ if ($isCorrect) {
     $_SESSION['score'] -= $selectedQuestion['points'];
 }
 
-// SAVE TO LEADERBOARD (each answer updates it)
+// save leaderboard
 $_SESSION['scores'][] = [
     "user" => $_SESSION['user'],
     "score" => $_SESSION['score']
