@@ -48,4 +48,25 @@ img {
     display: block;
     max-width: 100%;
 }
+
+
+ 
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+ 
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 2rem 1.25rem;
+    }
+ 
+    .logo-mark {
+        font-size: 4rem;
+    }
+ 
+    .dollar-strip span {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.4rem;
+    }
+}
  
