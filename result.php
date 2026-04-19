@@ -4,9 +4,14 @@ check_login();
 
 require_once 'data/questions.php';
 
-// initialize score if not set
+// init score
 if (!isset($_SESSION['score'])) {
     $_SESSION['score'] = 0;
+}
+
+// init used questions
+if (!isset($_SESSION['used_questions'])) {
+    $_SESSION['used_questions'] = [];
 }
 
 // get data
@@ -25,13 +30,15 @@ foreach ($questions as $category => $qs) {
     }
 }
 
-// safety check
 if (!$selectedQuestion) {
     echo "Question not found";
     exit();
 }
 
-// check answer (case insensitive)
+// mark question as used
+$_SESSION['used_questions'][] = $id;
+
+// check answer
 $isCorrect = strtolower($userAnswer) === strtolower($selectedQuestion['a']);
 
 // update score
