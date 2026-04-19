@@ -365,6 +365,198 @@ img {
     letter-spacing: 0.04em;
     opacity: 0.6;
 }
+/* =============================================
+   DASHBOARD
+   ============================================= */
+ 
+.dash-body {
+    background-color: var(--blue-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+ 
+.dash-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    animation: fadeUp 0.5s ease both;
+}
+ 
+/* Header */
+.dash-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+    margin-bottom: 3rem;
+}
+ 
+.dash-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex: 1;
+}
+ 
+.logo-mark-sm {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+    line-height: 1;
+}
+ 
+.logo-sub-sm {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    color: var(--gold-light);
+    opacity: 0.6;
+}
+ 
+.dash-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 1rem;
+}
+ 
+.user-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+}
+ 
+.user-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gold-light);
+}
+ 
+/* Hero */
+.dash-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+ 
+.dash-greeting {
+    font-size: 1rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    margin-bottom: 0.25rem;
+}
+ 
+.dash-name {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+ 
+.dash-tagline {
+    font-size: 1rem;
+    color: var(--gray-mid);
+    font-weight: 300;
+    max-width: 400px;
+    margin: 0 auto;
+}
+ 
+/* Cards */
+.dash-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+ 
+.dash-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+ 
+.dash-card:hover {
+    border-color: rgba(255, 215, 0, 0.45);
+    transform: translateY(-2px);
+}
+ 
+.dash-card--primary {
+    border-color: rgba(255, 215, 0, 0.4);
+    background: rgba(255, 215, 0, 0.05);
+}
+ 
+.dash-card-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+ 
+.dash-card-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+}
+ 
+.dash-card-body p {
+    font-size: 0.875rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    line-height: 1.5;
+}
+ 
+/* Stats bar */
+.dash-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+}
+ 
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+ 
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+ 
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+}
+ 
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.2);
+}
  
 /* =============================================
    RESPONSIVE
