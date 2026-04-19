@@ -14,6 +14,11 @@ if (!isset($_SESSION['used_questions'])) {
     $_SESSION['used_questions'] = [];
 }
 
+// init leaderboard
+if (!isset($_SESSION['scores'])) {
+    $_SESSION['scores'] = [];
+}
+
 // get data
 $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
 $userAnswer = isset($_POST['answer']) ? trim($_POST['answer']) : '';
@@ -35,7 +40,7 @@ if (!$selectedQuestion) {
     exit();
 }
 
-// mark question as used
+// mark used
 $_SESSION['used_questions'][] = $id;
 
 // check answer
@@ -47,6 +52,12 @@ if ($isCorrect) {
 } else {
     $_SESSION['score'] -= $selectedQuestion['points'];
 }
+
+// SAVE TO LEADERBOARD (each answer updates it)
+$_SESSION['scores'][] = [
+    "user" => $_SESSION['user'],
+    "score" => $_SESSION['score']
+];
 ?>
 
 <!DOCTYPE html>
