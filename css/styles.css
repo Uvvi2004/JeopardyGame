@@ -557,7 +557,175 @@ img {
     height: 40px;
     background: rgba(255, 215, 0, 0.2);
 }
+
+/* =============================================
+   GAME BOARD
+   ============================================= */
  
+.game-body {
+    background-color: var(--blue-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+ 
+.game-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    animation: fadeUp 0.5s ease both;
+}
+ 
+/* Game Header */
+.game-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+    margin-bottom: 2rem;
+}
+ 
+.game-header .dash-logo {
+    flex: 1;
+}
+ 
+.game-score-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius);
+    padding: 0.5rem 1.25rem;
+    margin-right: 1rem;
+}
+ 
+.game-score-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-mid);
+}
+ 
+.game-score-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+ 
+/* Game Over Banner */
+.game-over-banner {
+    text-align: center;
+    background: rgba(255, 215, 0, 0.07);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+ 
+.game-over-banner h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+}
+ 
+.game-over-banner p {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+}
+ 
+.game-over-banner .final-score {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+}
+ 
+/* Board Table */
+.board-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    margin-bottom: 2rem;
+}
+ 
+.board-table th {
+    background: var(--blue-dark);
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-transform: uppercase;
+}
+ 
+.board-table td {
+    background: var(--blue-mid);
+    text-align: center;
+    padding: 0;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    height: 80px;
+    vertical-align: middle;
+}
+ 
+/* Point buttons inside cells */
+.board-table td form {
+    margin: 0;
+    height: 100%;
+}
+ 
+.point-btn {
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: background 0.15s, transform 0.1s, color 0.15s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+ 
+.point-btn:hover {
+    background: rgba(255, 215, 0, 0.15);
+    color: var(--gold-light);
+    transform: scale(1.05);
+}
+ 
+.point-btn:active {
+    transform: scale(0.97);
+}
+ 
+/* Used cell checkmark */
+.cell-used {
+    color: rgba(255, 215, 0, 0.25);
+    font-size: 1.4rem;
+    display: block;
+}
+ 
+/* Game actions row */
+.game-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
 /* =============================================
    RESPONSIVE
    ============================================= */
