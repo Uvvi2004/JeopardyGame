@@ -4,12 +4,12 @@ check_login();
 
 require_once 'data/questions.php';
 
-// get question id
+ini_set('display_errors', 0);
+
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 $selectedQuestion = null;
 
-// find question by id
 foreach ($questions as $category => $qs) {
     foreach ($qs as $q) {
         if ($q['id'] === $id) {
@@ -19,7 +19,6 @@ foreach ($questions as $category => $qs) {
     }
 }
 
-// if not found
 if (!$selectedQuestion) {
     echo "Question not found";
     exit();
