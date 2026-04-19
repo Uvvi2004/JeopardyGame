@@ -4,13 +4,21 @@ check_login();
 
 ini_set('display_errors', 0);
 
-$scores = $_SESSION['scores'] ?? [];
+$file = 'data/scores.txt';
 
+$scores = [];
+
+if (file_exists($file)) {
+    $json = file_get_contents($file);
+    $scores = json_decode($json, true) ?? [];
+}
+
+// sort high → low
 usort($scores, function($a, $b) {
     return $b['score'] <=> $a['score'];
 });
 
-// top 10 only
+// top 10
 $scores = array_slice($scores, 0, 10);
 ?>
 
