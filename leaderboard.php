@@ -2,13 +2,16 @@
 require_once 'includes/session.php';
 check_login();
 
-// get scores
+ini_set('display_errors', 0);
+
 $scores = $_SESSION['scores'] ?? [];
 
-// sort highest first
 usort($scores, function($a, $b) {
     return $b['score'] <=> $a['score'];
 });
+
+// top 10 only
+$scores = array_slice($scores, 0, 10);
 ?>
 
 <!DOCTYPE html>
