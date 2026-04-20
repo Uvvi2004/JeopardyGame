@@ -1,10 +1,10 @@
 :root {
     --blue-dark:    #060CE9;
     --blue-mid:     #0D1BB3;
-    --blue-bg:      #06087A;
-    --gold:         #FFD700;
-    --gold-light:   #FFE566;
-    --gold-dim:     #B89A00;
+    --blue-bg:      #050714;
+    --purple:         #A78BFA;
+    --purple-light:   #C4B5FD;
+    --purple-dim:     #7C3AED;
     --white:        #FFFFFF;
     --off-white:    #F0EFEA;
     --gray-light:   #D6D4C8;
@@ -79,7 +79,7 @@ img {
         linear-gradient(rgba(255,215,0,0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,215,0,0.06) 1px, transparent 1px);
     background-size: 80px 80px;
-    animation: gridDrift 30s linear infinite;
+    
 }
  
 @keyframes gridDrift {
@@ -303,7 +303,7 @@ img {
  
 .btn-primary {
     background: var(--gold);
-    color: var(--blue-bg);
+    color: var(--white);
     box-shadow: 0 4px 18px rgba(255, 215, 0, 0.3);
 }
  
