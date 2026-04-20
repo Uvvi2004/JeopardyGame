@@ -557,7 +557,125 @@ img {
     height: 40px;
     background: rgba(255, 215, 0, 0.2);
 }
-
+/* =============================================
+   LEADERBOARD
+   ============================================= */
+ 
+.leaderboard-body {
+    background-color: var(--blue-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+ 
+.leaderboard-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    animation: fadeUp 0.5s ease both;
+}
+ 
+.leaderboard-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--gold);
+    text-shadow: var(--shadow-gold);
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+ 
+.leaderboard-subtitle {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--gray-mid);
+    margin-bottom: 2rem;
+}
+ 
+/* Table */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    margin-bottom: 2rem;
+}
+ 
+.leaderboard-table th {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    padding: 0.5rem 1.25rem;
+    text-align: left;
+}
+ 
+.leaderboard-table th:last-child {
+    text-align: right;
+}
+ 
+.leaderboard-table td {
+    background: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    padding: 1rem 1.25rem;
+    color: var(--white);
+    font-size: 0.95rem;
+    transition: background 0.15s;
+}
+ 
+.leaderboard-table tr:hover td {
+    background: rgba(255, 215, 0, 0.05);
+}
+ 
+.leaderboard-table td:first-child {
+    border-left: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+ 
+.leaderboard-table td:last-child {
+    border-right: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    text-align: right;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+}
+ 
+/* Rank cell */
+.rank-cell {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--gray-mid);
+    width: 48px;
+}
+ 
+/* Top 3 rank medals */
+.rank-1 { color: #FFD700; }
+.rank-2 { color: #C0C0C0; }
+.rank-3 { color: #CD7F32; }
+ 
+/* Top 3 row highlight */
+.leaderboard-table tr.top-row td {
+    background: rgba(255, 215, 0, 0.06);
+    border-color: rgba(255, 215, 0, 0.2);
+}
+ 
+/* Empty state */
+.leaderboard-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--gray-mid);
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: var(--radius-lg);
+}
+ 
 /* =============================================
    GAME BOARD
    ============================================= */
