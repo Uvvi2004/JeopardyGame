@@ -1,22 +1,22 @@
 <?php
 
 $questions = [
-    "Movies" => [
-        ["id" => 1, "q" => "Who directed Titanic?", "a" => "James Cameron", "points" => 100],
-        ["id" => 2, "q" => "Main character in Iron Man?", "a" => "Tony Stark", "points" => 200],
-        ["id" => 3, "q" => "Avatar world name?", "a" => "Pandora", "points" => 300],
-        ["id" => 4, "q" => "Who is Batman?", "a" => "Bruce Wayne", "points" => 400]
+    "Planets" => [
+        ["id" => 1, "q" => "Largest planet in our solar system?", "a" => "Jupiter", "points" => 100],
+        ["id" => 2, "q" => "Which planet has the most moons?", "a" => "Saturn", "points" => 200],
+        ["id" => 3, "q" => "What planet is known as the Red Planet?", "a" => "Mars", "points" => 300],
+        ["id" => 4, "q" => "Which planet rotates on its side?", "a" => "Uranus", "points" => 400]
     ],
-    "TV Shows" => [
-        ["id" => 5, "q" => "Show with dragons?", "a" => "Game of Thrones", "points" => 100],
-        ["id" => 6, "q" => "Breaking Bad main character?", "a" => "Walter White", "points" => 200],
-        ["id" => 7, "q" => "Friends cafe name?", "a" => "Central Perk", "points" => 300],
-        ["id" => 8, "q" => "Stranger Things girl?", "a" => "Eleven", "points" => 400]
+    "Space Missions" => [
+        ["id" => 5, "q" => "First mission to land on the Moon?", "a" => "Apollo 11", "points" => 100],
+        ["id" => 6, "q" => "First human in space?", "a" => "Yuri Gagarin", "points" => 200],
+        ["id" => 7, "q" => "Space telescope launched in 1990?", "a" => "Hubble", "points" => 300],
+        ["id" => 8, "q" => "NASA rover currently on Mars?", "a" => "Perseverance", "points" => 400]
     ],
-    "Sci-Fi" => [
-        ["id" => 9, "q" => "Star Wars desert planet?", "a" => "Tatooine", "points" => 100],
-        ["id" => 10, "q" => "Terminator AI?", "a" => "Skynet", "points" => 200],
-        ["id" => 11, "q" => "Alien ship name?", "a" => "Nostromo", "points" => 300],
-        ["id" => 12, "q" => "Matrix main character?", "a" => "Neo", "points" => 400]
+    "Stars & Galaxies" => [
+        ["id" => 9, "q" => "Closest star to Earth?", "a" => "Sun", "points" => 100],
+        ["id" => 10, "q" => "Our galaxy name?", "a" => "Milky Way", "points" => 200],
+        ["id" => 11, "q" => "Exploding star name?", "a" => "Supernova", "points" => 300],
+        ["id" => 12, "q" => "Nearest galaxy to Milky Way?", "a" => "Andromeda", "points" => 400]
     ]
 ];
