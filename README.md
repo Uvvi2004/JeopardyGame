@@ -4,6 +4,11 @@
 - Uddhav Cota
 - [Teammate Name]
 
+## Live Deployment (CODD)
+The application is hosted on CODD and can be accessed here:
+
+https://codd.cs.gsu.edu/~ucota1/Web_Pro/JeopardyGame/login.php
+
 ## Project Description
 This project is a Jeopardy-style quiz web application built using PHP, HTML, and CSS. Users can register, log in, play a quiz game, answer questions, and track their scores on a leaderboard.
 
@@ -16,13 +21,11 @@ This project is a Jeopardy-style quiz web application built using PHP, HTML, and
 - Persistent leaderboard using file storage
 - Reset game functionality
 
-## How to Run
+## How to Run (Local - Optional)
 1. Place the project folder inside the XAMPP `htdocs` directory
-2. Start Apache from XAMPP
+2. Start Apache using XAMPP
 3. Open browser and go to:
    http://localhost/JeopardyGame
-4. Register a new account or log in
-5. Start playing the game
 
 ## Technologies Used
 - PHP (server-side logic)
