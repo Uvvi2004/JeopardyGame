@@ -75,26 +75,42 @@ file_put_contents($file, json_encode($scores));
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Result</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
 
-<h2>Result</h2>
+<body class="question-body">
+    <div class="auth-bg">
+        <div class="bg-grid"></div>
+        <div class="bg-glow"></div>
+    </div>
 
-<p>Your Answer: <?php echo htmlspecialchars($userAnswer); ?></p>
-<p>Correct Answer: <?php echo htmlspecialchars($selectedQuestion['a']); ?></p>
+    <div class="question-wrapper">
+        <header class="game-header">
+            <div class="dash-logo"><span class="logo-mark-sm">J!</span><span class="logo-sub-sm">JEOPARDY</span></div>
+            <a href="game.php" class="btn btn-ghost btn-sm">← Back to Game</a>
+        </header>
 
-<?php if ($isCorrect): ?>
-    <p style="color:green;">Correct! +<?php echo $selectedQuestion['points']; ?></p>
-<?php else: ?>
-    <p style="color:red;">Wrong! -<?php echo $selectedQuestion['points']; ?></p>
-<?php endif; ?>
+        <div class="question-card">
+            <h2 class="question-label">Result</h2>
 
-<h3>Your Score: <?php echo $_SESSION['score']; ?></h3>
+            <p class="question-text">Your Answer: <?php echo htmlspecialchars($userAnswer); ?></p>
+            <p class="question-text">Correct Answer: <?php echo htmlspecialchars($selectedQuestion['a']); ?></p>
 
-<br>
-<a href="game.php">Back to Game</a>
+            <?php if ($isCorrect): ?>
+                <p class="alert alert-success">Correct! +<?php echo $selectedQuestion['points']; ?></p>
+            <?php else: ?>
+                <p class="alert alert-error">Wrong! -<?php echo $selectedQuestion['points']; ?></p>
+            <?php endif; ?>
 
+            <h3 class="game-score-value">Your Score: <?php echo $_SESSION['score']; ?></h3>
+
+
+            <a href="game.php" class="btn btn-primary btn-full">Back to Game</a>
+        </div>
+    </div>
 </body>
+
 </html>
