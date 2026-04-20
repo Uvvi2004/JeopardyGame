@@ -845,6 +845,54 @@ img {
 }
 
 /* =============================================
+   QUESTION PAGE
+   ============================================= */
+ 
+.question-body {
+    background-color: var(--blue-bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+ 
+.question-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    animation: fadeUp 0.5s ease both;
+}
+ 
+.question-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-card);
+}
+ 
+.question-label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+ 
+.question-text {
+    font-size: 1.25rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
  

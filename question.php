@@ -27,25 +27,35 @@ if (!$selectedQuestion) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Question</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
 
-<h2>Question</h2>
+<body class="question-body">
+    <div class="auth-bg">
+        <div class="bg-grid"></div>
+        <div class="bg-glow"></div>
+    </div>
+    <div class="question-wrapper">
+        <h2 class="question-label">Question</h2>
 
-<p><?php echo htmlspecialchars($selectedQuestion['q']); ?></p>
+        <p class="question-text"><?php echo htmlspecialchars($selectedQuestion['q']); ?></p>
 
-<form action="result.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $selectedQuestion['id']; ?>">
-    
-    <input type="text" name="answer" placeholder="Your answer">
-    
-    <button type="submit">Submit</button>
-</form>
-
-<br>
-<a href="game.php">Back to Game</a>
+        <form action="result.php" method="POST" class="auth-form">
+            <input type="hidden" name="id" value="<?php echo $selectedQuestion['id']; ?>">
+            <div class="form-group">
+                <input type="text" name="answer" id="answer" class="form-input" placeholder="Your answer" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+                Submit<span class="btn-arrow">→</span>
+            </button>
+        </form>
+    </div>
+    <br>
+    <a href="game.php" class="btn btn-ghost btn-sm">Back to Game</a>
 
 </body>
+
 </html>
