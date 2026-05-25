@@ -2,7 +2,7 @@
 
 ## Team Members
 - Uddhav Cota
-- [Teammate Name]
+- Juan Cazarez
 
 ## Live Deployment (CODD)
 The application is hosted on CODD and can be accessed here:
